@@ -1,0 +1,27 @@
+User
+PK: UserID
+Last Name
+Name
+Day of Birth-->Age
+Login
+(Password) not necessart if fb login
+Sex
+Time Zone
+
+Achievements
+PK: AchievementID
+FK: UserID
+Progress (%)
+Boolean Achieved
+
+Alarm
+PK: AlarmID
+Alarm Time
+TimeWindow
+Status (Awake, Light sleep, Deep sleep)
+
+Ticks
+PK:TickID
+FK:AlarmID
+each 5 mins data is sent
+Data
