@@ -3,7 +3,7 @@ PK: UserID
 Last Name
 Name
 Day of Birth-->Age
-Login
+Login / Mail / FB Login
 (Password) not necessart if fb login
 Sex
 Time Zone
