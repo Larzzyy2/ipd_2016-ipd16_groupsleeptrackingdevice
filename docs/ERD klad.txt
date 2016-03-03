@@ -5,7 +5,7 @@ Name
 Day of Birth-->Age
 Login / Mail / FB Login
 (Password) not necessart if fb login
-Sex
+Gender
 Time Zone
 
 Achievements
