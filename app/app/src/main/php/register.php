@@ -1,22 +1,25 @@
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
+		$lastname = $_POST['lastname'];
 		$name = $_POST['name'];
-		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$email = $_POST['email'];
+		$yob = $_POST['yob'];
+		$gender = $_POST['gender'];
+		$timezone = $_POST['timezone];
 		
-		if($name == '' || $username == '' || $password == '' || $email == ''){
+		if($lastname == '' || $name == '' || $password == '' || $email == ''){
 			echo 'please fill all values';
 		}else{
-			require_once('dbConnect.php');
-			$sql = "SELECT * FROM users WHERE username='$username' OR email='$email'";
+			require_once('dbconnect.php');
+			$sql = "SELECT * FROM User WHERE username='$username' OR email='$email'";
 			
 			$check = mysqli_fetch_array(mysqli_query($con,$sql));
 			
 			if(isset($check)){
 				echo 'username or email already exist';
 			}else{				
-				$sql = "INSERT INTO users (name,username,password,email) VALUES('$name','$username','$password','$email')";
+				$sql = "INSERT INTO users (Last_Name,Name,E-Mail_Address,Password,YoB,Gender,Time_Zone) VALUES('$lastname','$name','$password','$email','$yob','$gender','$timezone')";
 				if(mysqli_query($con,$sql)){
 					echo 'successfully registered';
 				}else{
