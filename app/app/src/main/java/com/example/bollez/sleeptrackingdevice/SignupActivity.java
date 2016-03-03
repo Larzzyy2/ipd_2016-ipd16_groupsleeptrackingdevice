@@ -6,24 +6,32 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class SignupActivity extends AppCompatActivity {
+    Spinner genderspinner;
+    ArrayAdapter<CharSequence> genderadapter;
 
+    Spinner countryspinner;
+    ArrayAdapter<CharSequence> countryadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        //Country
+        countryspinner = (Spinner) findViewById(R.id.country_spinner);
+        countryadapter = ArrayAdapter.createFromResource(this, R.array.country_array,android.R.layout.simple_spinner_item);
+        countryadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        countryspinner.setAdapter(countryadapter);
+
+        //GENDER
+        genderspinner = (Spinner) findViewById(R.id.gender_spinner);
+        genderadapter = ArrayAdapter.createFromResource(this,R.array.gender_array, android.R.layout.simple_spinner_item);
+        genderadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderspinner.setAdapter(genderadapter);
+
     }
 
 }
